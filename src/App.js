@@ -41,7 +41,7 @@ const Invoice = ({ invoiceId }) => {
   );
 };
 
-const Invoices = ({ children }) => {
+const Invoices = ({ children, navigate }) => {
   return (
     <div>
       <h2>Invoices</h2>
@@ -53,6 +53,21 @@ const Invoices = ({ children }) => {
           <Link to="wow">invoice wow</Link>
         </li>
       </ul>
+      <form
+        onSubmit={(event) => {
+          event.preventDefault();
+          const id = event.target.elements[0].value;
+          event.target.reset();
+          navigate(id);
+        }}
+      >
+        <p>
+          <label>
+            New Invoice Id: <input type="text" name="invId" />
+          </label>
+          <button type="submit">Create a new invoice</button>
+        </p>
+      </form>
       {children}
     </div>
   );
