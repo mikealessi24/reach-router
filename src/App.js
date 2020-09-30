@@ -12,6 +12,7 @@ function App() {
         <Home path="/" />
         <Dashboard path="/dashboard" />
         <Invoices path="invoices">
+          <InvoicesIndex path="/"></InvoicesIndex>
           <Invoice path=":invoiceId" />
         </Invoices>
       </Router>
@@ -52,6 +53,15 @@ const Invoices = ({ children }) => {
         </li>
       </ul>
       {children}
+    </div>
+  );
+};
+
+const InvoicesIndex = () => {
+  return (
+    <div>
+      This is the entry page once invoices is clicked. Type a number after the
+      url to get a specific index
     </div>
   );
 };
