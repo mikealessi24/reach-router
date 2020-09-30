@@ -10,7 +10,10 @@ function App() {
       <Router>
         <Home path="/" />
         <Dashboard path="/dashboard" />
+        <Invoice path="invoices/:invoiceId" />
       </Router>
+      <Link to="invoices/amazing">invoice amazing</Link>{" "}
+      <Link to="invoices/wow">invoice wow</Link>
     </div>
   );
 }
@@ -26,5 +29,13 @@ const Dashboard = () => (
     <h2>Dashboard</h2>
   </div>
 );
+
+const Invoice = ({ invoiceId }) => {
+  return (
+    <div>
+      <h2>Invoice {invoiceId}</h2>
+    </div>
+  );
+};
 
 export default App;
