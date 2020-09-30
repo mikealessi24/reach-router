@@ -9,6 +9,7 @@ function App() {
         <Link to="invoices">Invoices</Link>
       </nav>
       <Router>
+        <NotFound default />
         <Home path="/" />
         <Dashboard path="/dashboard" />
         <Invoices path="invoices">
@@ -64,6 +65,10 @@ const InvoicesIndex = () => {
       url to get a specific index
     </div>
   );
+};
+
+const NotFound = () => {
+  return <div>oops, the page was not found. Check your url!</div>;
 };
 
 export default App;
