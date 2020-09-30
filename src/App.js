@@ -1,13 +1,13 @@
 import React from "react";
 import { Link, Router } from "@reach/router";
+import Navbar from "./components/Navbar";
+import Home from "./pages/Home";
+import NotFound from "./pages/NotFound";
 
 function App() {
   return (
     <div>
-      <nav>
-        <Link to="/">Home</Link> <Link to="dashboard">Dashboard</Link>{" "}
-        <Link to="invoices">Invoices</Link>
-      </nav>
+      <Navbar />
       <Router>
         <NotFound default />
         <Home path="/" />
@@ -20,12 +20,6 @@ function App() {
     </div>
   );
 }
-
-const Home = () => (
-  <div>
-    <h2>Welcome Home</h2>
-  </div>
-);
 
 const Dashboard = () => (
   <div>
@@ -80,10 +74,6 @@ const InvoicesIndex = () => {
       url to get a specific index
     </div>
   );
-};
-
-const NotFound = () => {
-  return <div>oops, the page was not found. Check your url!</div>;
 };
 
 export default App;
